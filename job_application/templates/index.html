@@ -10,7 +10,21 @@
 </head>
 
 <body>
-    <h1>hello this is a job application </h1>
+    
+
+    <h1>Job Application</h1>
+
+    {% if success %}
+        <p>Application submitted successfully!</p>
+    {% endif %}
+
+    <form method="POST">
+        {% csrf_token %}
+        
+        {{ form.as_p }}  <!-- Render form fields as paragraphs -->
+        
+        <button type="submit">Submit</button>
+    </form>
 </body>
 
 </html>
